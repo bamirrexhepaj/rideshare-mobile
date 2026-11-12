@@ -1,8 +1,8 @@
 ﻿# RideShare · Java 7
 
 ## Rasti im
-GitHub: AlajdinFetahi
-Kodi: P7-378
+GitHub: bamirrexhepaj
+Kodi: P7-598
 Skenari i zgjedhur (numri dhe titulli, nga Rastet 1–5): Rasti 3 · Klikim apo rezervim.
 ID i udhëtimit në projektin tim: 1.
 
@@ -32,8 +32,8 @@ Skedari: aplikacioni/src/app/udhetimi/[id]/page.tsx
 Ky skedar lexon udhëtimin dhe paraqet detajet. U ndryshua vetëm etiketa “Kërko vend” në **“Kërko vend · simulim, pa rezervim real”**. Përdoruesi informohet për kufizimin para hapjes së veprimit. Ndryshimi i kodit është një rresht në një skedar ekzistues. Rruga e lidhjes, kushti vende > 0, leximi i databazës, arkitektura, autentikimi dhe kontrollet e pronësisë mbetën të njëjta. Nuk u shtuan biblioteka ose teste në repository.
 
 ## Versionet
-Para: https://github.com/AlajdinFetahi/rideshare-mobile/commit/c980ddc68fdfc515208c6f0f1ce413e3c2599d21
-Pas: https://github.com/AlajdinFetahi/rideshare-mobile/commit/ad5c75532c7295104a906bbf6dc8a7683ec0361a
+Para: https://github.com/bamirrexhepaj/rideshare-mobile/commit/068d6fe926149d0b4f9f0add776460b6e762bb64
+Pas:
 
 Para ruan raportin fillestar dhe kodin e pandryshuar. Pas ndryshon vetëm etiketën në skedarin e mësipërm dhe ka Para si prind. Raporti përfundimtar ruhet në commit pas tyre.
 
