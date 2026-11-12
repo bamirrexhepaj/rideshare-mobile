@@ -33,7 +33,7 @@ Ky skedar lexon udhëtimin dhe paraqet detajet. U ndryshua vetëm etiketa “Kë
 
 ## Versionet
 Para: https://github.com/bamirrexhepaj/rideshare-mobile/commit/068d6fe926149d0b4f9f0add776460b6e762bb64
-Pas:
+Pas: https://github.com/bamirrexhepaj/rideshare-mobile/commit/5e60295e4e0e1340402b87462efafa1bf16b8ee0
 
 Para ruan raportin fillestar dhe kodin e pandryshuar. Pas ndryshon vetëm etiketën në skedarin e mësipërm dhe ka Para si prind. Raporti përfundimtar ruhet në commit pas tyre.
 
