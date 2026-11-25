@@ -2,13 +2,17 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import type { Udhetim } from "@/lib/udhetimet";
 
-const { gjejUdhetiminMock } = vi.hoisted(() => ({
+const { gjejUdhetiminMock, lexogjendjenMock } = vi.hoisted(() => ({
   gjejUdhetiminMock: vi.fn(),
+  lexogjendjenMock: vi.fn(),
 }));
 
 vi.mock("@/lib/udhetimet", () => ({
   gjejUdhetimin: gjejUdhetiminMock,
 }));
+vi.mock("@/lib/kerkesat", () => ({ lexogjendjen: lexogjendjenMock }));
+vi.mock("@/lib/auth", () => ({ authOptions: {} }));
+vi.mock("next-auth", () => ({ getServerSession: vi.fn().mockResolvedValue(null) }));
 vi.mock("next/navigation", () => ({
   notFound: () => {
     throw new Error("NEXT_NOT_FOUND");

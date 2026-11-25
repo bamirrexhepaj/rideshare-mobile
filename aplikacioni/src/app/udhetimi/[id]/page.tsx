@@ -2,6 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { gjejUdhetimin } from "@/lib/udhetimet";
 import { MeetingPoint } from "@/components/MeetingPoint";
+import { KerkesaUdhetimi } from "@/components/KerkesaUdhetimi";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { lexogjendjen } from "@/lib/kerkesat";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +33,12 @@ export default async function Detajet({
     notFound();
   }
 
+  const session = await getServerSession(authOptions);
+  let gjendja = null;
+  if (session?.user.githubId) {
+    try { gjendja = await lexogjendjen(id, session.user.githubId); } catch { /* detail page remains readable */ }
+  }
+
   return (
     <main>
       <Link href="/">← Kthehu te lista</Link>
@@ -39,9 +49,10 @@ export default async function Detajet({
       <p>Vendtakimi: {udhetim.vendtakimi}</p>
       <p>Vende të lira: {udhetim.vende}</p>
       <MeetingPoint />
+      {gjendja && <KerkesaUdhetimi id={id} initialState={gjendja} />}
       {udhetim.vende > 0 ? (
         <Link className="action" href={`/udhetimi/${id}/kerkesa`}>
-          Kërko vend · simulim, pa rezervim real
+          Shiko kërkesën për vend
         </Link>
       ) : (
         <button className="action" disabled>
