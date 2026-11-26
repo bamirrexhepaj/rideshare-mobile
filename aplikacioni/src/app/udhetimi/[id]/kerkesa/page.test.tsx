@@ -17,7 +17,7 @@ describe("Kerkesa", () => {
 
   test("kërkon hyrje para shfaqjes së kërkesës personale", async () => {
     getServerSessionMock.mockResolvedValue(null);
-    const html = renderToStaticMarkup(await Kerkesa({ params: Promise.resolve({ id: "2" }) }));
+    const html = renderToStaticMarkup(await Kerkesa({ params: Promise.resolve({ id: "2" }), searchParams: Promise.resolve({}) }));
     expect(html).toContain("Hyr me GitHub");
     expect(html).not.toContain("Kërko një vend");
   });
@@ -27,7 +27,7 @@ describe("Kerkesa", () => {
     lexogjendjenMock.mockResolvedValue({
       ride: { id: "2", nisja: "Ferizaj", vende: 2 }, role: "passenger", requests: [],
     });
-    const html = renderToStaticMarkup(await Kerkesa({ params: Promise.resolve({ id: "2" }) }));
+    const html = renderToStaticMarkup(await Kerkesa({ params: Promise.resolve({ id: "2" }), searchParams: Promise.resolve({}) }));
     expect(html).toContain("Udhëtimi 2");
     expect(html).toContain("Vende të lira: <strong>2</strong>");
     expect(html).toContain("Pa kërkesë");
